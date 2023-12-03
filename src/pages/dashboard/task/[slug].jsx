@@ -7,17 +7,18 @@ import AuthVerify from '@/components/verifyer';
 import { useEffect, useState } from 'react';
 import CreateTask from '@/components/createTask';
 import Tasks from '@/components/task';
-const redirectToLogin = async () => {
-    await Router.push('/login');
-};
+
 const Index = () => {
     const token = Cookies.get('token');
     const router = useRouter();
+    const redirectToLogin = () => {
+        router.push('/login');
+    };
     const { slug } = router.query;
     const [tasks, setTasks] = useState([]);
     const [setedTasks, setsetedTasks] = useState(false)
-    const redirectToDashboard = async () => {
-        await Router.push('/dashboard');
+    const redirectToDashboard = () => {
+        router.push('/dashboard');
     };
     const newSlug =  decodeURIComponent(slug)
     const fetchData = async () => {

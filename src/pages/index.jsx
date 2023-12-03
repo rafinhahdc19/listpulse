@@ -1,12 +1,18 @@
 import Image from 'next/image';
 import Router from 'next/router';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
-const redirectToLogin = async () => {
-  await Router.push("/dashboard");
-};
 
 export default function Home() {
-  redirectToLogin();
+  const router = useRouter()
+  const redirectToLogin = () => {
+    router.push("/dashboard");
+  };
+  useEffect(() => {
+    redirectToLogin();
+  }, [])
+ 
 
   return (
     <>

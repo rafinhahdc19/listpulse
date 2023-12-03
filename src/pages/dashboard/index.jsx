@@ -13,12 +13,15 @@ import {
 } from '@chakra-ui/react';
 import axios from 'axios';
 import CreateCollection from '@/components/createCollection';
+import { useRouter } from 'next/router';
 
-const redirectToLogin = async () => {
-  await Router.push('/login');
-};
 
 const Index = () => {
+  
+  const router = useRouter();
+  const redirectToLogin = () => {
+    router.push('/login');
+  };
   const [collections, setCollections] = useState([]);
   const [erro, setErro] = useState('');
   const [loading, setLoading] = useState(true);
