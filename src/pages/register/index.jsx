@@ -12,7 +12,7 @@ import {
     AlertDescription,
   } from '@chakra-ui/react'
 
-const index = () => {
+const Index = () => {
     const [erro, seterro] = useState("")
     const [success, setsuccess] = useState("")
     const [loading, setLoading] = useState(false)

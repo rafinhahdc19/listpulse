@@ -15,7 +15,7 @@ import {
 import Router from 'next/router'
 import { useEffect } from 'react'
 
-const index = () => {
+const Index = () => {
     const [erro, seterro] = useState("")
     const [success, setsuccess] = useState("")
     const [loading, setLoading] = useState(false)
@@ -25,7 +25,7 @@ const index = () => {
       });
       useEffect(() => {
         // Verificar se o cookie do token existe
-        const token = Cookies.get('token');
+        const token =  Cookies.get('token');
         if (token) {
           // Redirecionar para o dashboard se o token existir
           Router.push('/dashboard');
