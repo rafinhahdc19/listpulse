@@ -21,7 +21,7 @@ import {
     AlertDescription,
 } from '@chakra-ui/react'
 
-function AlertDialogForTask({ openForTask, setOpenForTask, status, taskId, collectionName, attCollections }) {
+function AlertDialogForTask({ openForTask, setOpenForTask, status, taskId, collectionName, attCollections, title }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const cancelRef = React.useRef()
     const token = Cookies.get('token');
@@ -82,9 +82,9 @@ function AlertDialogForTask({ openForTask, setOpenForTask, status, taskId, colle
                         ) : null}
                         <AlertDialogBody>
                             {status === 1 ? (
-                                <span>Você pode mudar sua tarefa para pendente</span>
+                                <span>{title}</span>
                             ) : (
-                                <span>Você pode mudar sua tarefa para concluída</span>
+                                <span>{title}</span>
                             )}
                         </AlertDialogBody>
 

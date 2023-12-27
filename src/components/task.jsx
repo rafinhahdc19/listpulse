@@ -132,7 +132,7 @@ const Tasks = ({ titulo, attCollections, collectionName, status, taskId }) => {
 
             </div>
         </button>
-            <AlertDialogForTask openForTask={StatusForTask} attCollections={attCollections} setOpenForTask={setStatusForTask} status={status} taskId={taskId} collectionName={collectionName}></AlertDialogForTask>
+            <AlertDialogForTask openForTask={StatusForTask} attCollections={attCollections} setOpenForTask={setStatusForTask} status={status} taskId={taskId} collectionName={collectionName} title={titulo}></AlertDialogForTask>
             <Modal
                 initialFocusRef={initialRef}
                 finalFocusRef={finalRef}
